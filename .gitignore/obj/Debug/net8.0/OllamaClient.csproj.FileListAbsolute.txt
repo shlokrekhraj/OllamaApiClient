@@ -1,0 +1,14 @@
+C:\Users\Tarun\OllamaClient\OllamaClient\bin\Debug\net8.0\OllamaClient.exe
+C:\Users\Tarun\OllamaClient\OllamaClient\bin\Debug\net8.0\OllamaClient.deps.json
+C:\Users\Tarun\OllamaClient\OllamaClient\bin\Debug\net8.0\OllamaClient.runtimeconfig.json
+C:\Users\Tarun\OllamaClient\OllamaClient\bin\Debug\net8.0\OllamaClient.dll
+C:\Users\Tarun\OllamaClient\OllamaClient\bin\Debug\net8.0\OllamaClient.pdb
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\OllamaClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\OllamaClient.AssemblyInfoInputs.cache
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\OllamaClient.AssemblyInfo.cs
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\OllamaClient.csproj.CoreCompileInputs.cache
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\OllamaClient.dll
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\refint\OllamaClient.dll
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\OllamaClient.pdb
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\OllamaClient.genruntimeconfig.cache
+C:\Users\Tarun\OllamaClient\OllamaClient\obj\Debug\net8.0\ref\OllamaClient.dll
