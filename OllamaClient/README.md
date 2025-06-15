@@ -1,38 +1,136 @@
 # OllamaClient
 
-A C# console application that interacts with the Ollama local LLM service to generate text responses.
+**OllamaClient** is a simple C# console application built with .NET 7 that communicates with the [Ollama](https://ollama.com/) local Large Language Model (LLM) service. It sends text prompts and receives generated responses from models like LLaMA 3 or Mistral running locally via the Ollama API.
+
+---
 
 ## Overview
 
-This project demonstrates how to call a local Ollama language model from a .NET 7 C# console app. It uses HTTP calls to communicate with the Ollama API running on your machine.
-This is a .NET 7 C# console app that communicates with the Ollama local LLM service over HTTP on port 11434.
+This project demonstrates how to:
 
-## Features
+- Set up and run a local LLM using Ollama in Docker
+- Interact with it from a C# application using HTTP
+- Send prompts and receive AI-generated text responses
 
-- Connects to Ollama running locally
-- Sends prompt requests and receives generated responses
-- Easy to build and run with Docker or locally using .NET SDK
+---
 
-## Prerequisites
+## Requirements
 
-## Prerequisites
+Install the following on your system before starting:
 
-- [Ollama](https://ollama.com/) installed and running locally  
-  Download and install from the official site, then start the Ollama service.
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
+- [Docker Desktop](https://www.docker.com/get-started)
+- [Git](https://git-scm.com/downloads)
 
-- [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) installed (for local build)  
-  Required if you want to build or run the app outside Docker.
-
-- Docker installed (optional, for containerized builds)  
-  Install Docker Desktop from [https://www.docker.com/get-started](https://www.docker.com/get-started).  
-  To build the image:  
-  docker build -t ollama-client .
-
+---
 
 ## Getting Started
 
-### Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/shlokrekhraj/ollama-client.git
 cd ollama-client
+```
+
+## Set Up Ollama (LLM Runtime)
+
+### Install Docker app
+### a. Pull the Ollama Docker image
+
+```bash
+docker pull ollama/ollama
+```
+
+### b. Start the Ollama container
+
+```bash
+docker run -d --name ollama \
+  -p 11434:11434 \
+  --restart=always \
+  ollama/ollama
+```
+This exposes the Ollama REST API at `http://localhost:11434`.
+
+### c. Enter the container and pull a model
+
+```bash
+docker exec -it ollama bash
+```
+
+Inside the container:
+
+```bash
+ollama pull llama3
+exit
+```
+
+## 3. Run the C# Console App (Locally)
+
+In the terminal:
+```bash
+dotnet clean
+dotnet build
+dotnet run
+```
+This will send a prompt to the running Ollama model and print the AI’s response in the console.
+
+### a. Build the Docker image
+
+```bash
+docker build -t ollama-client .
+```
+
+### b. Run the container
+by clicking on run button
+
+## Project Structure
+
+```
+ollama-client/
+├── Program.cs            # Main app logic
+├── ollama-client.csproj
+├── Dockerfile            # Optional Docker build for the C# app
+├── README.md             # You're here
+```
+
+## Libraries Used
+This project uses:
+
+- `System.Net.Http` – to send HTTP POST requests  
+- `System.Text.Json` – to serialize/deserialize JSON  
+
+## Sample Output
+Sending prompt to Ollama...
+Response: "Sure! Here's a generated answer from the model."
+
+## Troubleshooting
+### Ollama not responding?
+
+Make sure Docker is running and Ollama is started:
+
+```bash
+docker ps
+```
+
+### Model not found?
+
+Enter the container and pull a model:
+
+```bash
+docker exec -it ollama bash
+ollama pull llama3
+```
+
+## Customizing the Prompt
+
+Open `Program.cs` and change the value of the prompt string. For example:
+
+```c#
+var prompt = "Write a short poem about the ocean.";
+```
+Rebuild and rerun the app to see the new response.
+
+This project is for educational and internal development use. No external license applied yet.
+
+
